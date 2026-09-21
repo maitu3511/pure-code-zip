@@ -297,6 +297,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     <Facebook className="w-4 h-4 text-white fill-white" />
                   </a>
                   <a
+                    href={AGENCY_CONFIG.social.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-lg bg-[#FF0000] text-white flex items-center justify-center shadow-sm hover:bg-[#cc0000] hover:scale-110 hover:shadow-[0_0_12px_rgba(255,0,0,0.5)] transition-all duration-200"
+                    title="Digibasera YouTube Channel"
+                  >
+                    <Youtube className="w-4 h-4 text-white" />
+                  </a>
+                  <a
                     href={getWhatsAppUrl(
                       "Hi Digibasera team, I want to connect regarding your services.",
                     )}
