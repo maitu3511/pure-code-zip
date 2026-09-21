@@ -1,29 +1,43 @@
-# Welcome to your Lovable project
+DIGIBASERA WEBSITE - CHANGED FILES ONLY
+=========================================
 
-This project was built with [Lovable](https://lovable.dev).
+Ye zip sirf UN files ki he jo update/add ki gayi he. Isi folder structure
+ke hisab se apne project (project-lovable-archive) me copy-paste kardo,
+same path pe replace kar dena (overwrite).
 
-## Build with Lovable
+1) HOME PAGE HERO - VIDEO PAR TEXT CLEAR
+   File: src/components/Hero.tsx
+   Kya kiya: Background video ke upar white/cream overlay ki opacity
+   badhai + headline aur subtitle par soft text-shadow add kiya, taaki
+   text hamesha clearly visible rahe, video kaisa bhi frame ho.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+2) CAREERS PAGE HERO - IMAGE PAR TEXT CLEAR
+   File: src/pages/CareersPage.tsx
+   Kya kiya: Background image ke upar white wash/overlay strong kiya +
+   heading aur paragraph par text-shadow add kiya, taaki text image ke
+   upar bhi clearly readable rahe.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+3) FAVICON = HEADER KA SAME LOGO
+   Files: public/favicon.png, public/favicon.ico, public/favicon.svg,
+          public/apple-touch-icon.png
+   Kya kiya: Header me jo "DB" monogram logo use ho raha he, usi se
+   favicon regenerate kiya (pehle favicon.svg alag design tha). Ab
+   browser tab, bookmark, aur mobile home-screen icon sab jagah same
+   logo dikhega.
 
-## Development
+4) ABOUT PAGE - TEAM MEMBERS KI REAL PHOTOS
+   Files: src/data/teamData.ts
+          src/assets/team/arman-ali.jpg
+          src/assets/team/arbaj-saifi.jpg
+          src/assets/team/mohd-danish.jpg
+          src/assets/team/mohasin-ahmed.jpg
+   Kya kiya: Pehle stock/Unsplash photos lagi thi, ab aapki diya hui
+   real photos map kar di he:
+     - 1st image  -> Arman Ali
+     - 2nd image  -> Arbaj Saifi
+     - 3rd image  -> Moh. Danish
+     - 4th image  -> Mohasin Ahmed
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+NOTE: Design/layout me koi aur change nahi kiya he, sirf upar wale
+4 fixes hi kiye he jo aapne bataye the. Build test (npm run build)
+successfully pass ho gaya he, koi error nahi he.
