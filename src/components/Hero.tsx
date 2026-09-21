@@ -19,9 +19,8 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { HeroBackgroundVideo } from "./HeroBackgroundVideo";
 import { AGENCY_CONFIG } from "../data/agencyData";
 import { getWhatsAppUrl } from "../utils/whatsapp";
-// Hero background video served from the CDN asset store.
-import heroVideoAsset from "../assets/home-hero-video.mp4.asset.json";
-const heroVideoMp4 = { url: heroVideoAsset.url };
+// Hero background video shipped with the site (works on any host).
+const heroVideoMp4 = { url: "/assets/videos/home-hero-video.mp4" };
 const heroVideoPoster = { url: "/assets/heroes/home-hero.jpg" };
 
 // Typewriter Services list (types 1-by-1, pauses, erases, and cycles)
