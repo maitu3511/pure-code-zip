@@ -7,6 +7,7 @@ import {
   Instagram,
   Facebook,
   Linkedin,
+  Youtube,
   Send,
   CheckCircle2,
   ShieldCheck,
