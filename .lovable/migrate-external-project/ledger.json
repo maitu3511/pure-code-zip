@@ -1,0 +1,61 @@
+{
+  "source": "stable-code-archive-main.zip",
+  "capabilities": [
+    {
+      "capability": "application source and configuration",
+      "source": "uploaded code archive",
+      "outcome": "preserve exactly",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "routes and page content",
+      "source": "TanStack routes plus client-side SiteApp navigation",
+      "outcome": "preserve exactly",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "images, videos, fonts, and favicons",
+      "source": "bundled public and src assets",
+      "outcome": "preserve exactly",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "browser-stored admin and content settings",
+      "source": "localStorage and sessionStorage",
+      "outcome": "preserve exactly",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "database, authentication, payments, email, AI, and external secrets",
+      "source": "archive inspection",
+      "outcome": "not detected",
+      "status": "not_applicable",
+      "next_action": "none"
+    },
+    {
+      "capability": "existing database records and uploaded storage objects",
+      "source": "archive inspection",
+      "outcome": "not detected; content is bundled in source/assets",
+      "status": "not_applicable",
+      "next_action": "none"
+    },
+    {
+      "capability": "production cutover",
+      "source": "user request only covers code restoration",
+      "outcome": "not requested",
+      "status": "deferred",
+      "next_action": "publish only when user requests"
+    },
+    {
+      "capability": "build and visual verification",
+      "source": "Lovable preview",
+      "outcome": "desktop and mobile rendering verified with no browser errors",
+      "status": "verified",
+      "next_action": "none"
+    }
+  ]
+}
