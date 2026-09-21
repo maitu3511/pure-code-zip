@@ -19,11 +19,9 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { HeroBackgroundVideo } from "./HeroBackgroundVideo";
 import { AGENCY_CONFIG } from "../data/agencyData";
 import { getWhatsAppUrl } from "../utils/whatsapp";
-// Use files that are physically bundled in the repository so Netlify can serve
-// the hero video directly. The previous asset JSON files pointed to Lovable's
-// private /__l5e/assets-v1/ URLs, which are not available on Netlify.
-const heroVideoMp4 = { url: "/assets/videos/home-digital-agency-hero.mp4" };
-const heroVideoWebm = { url: "/assets/videos/home-digital-agency-hero.webm" };
+// Hero background video served from the CDN asset store.
+import heroVideoAsset from "../assets/home-hero-video.mp4.asset.json";
+const heroVideoMp4 = { url: heroVideoAsset.url };
 const heroVideoPoster = { url: "/assets/heroes/home-hero.jpg" };
 
 // Typewriter Services list (types 1-by-1, pauses, erases, and cycles)
