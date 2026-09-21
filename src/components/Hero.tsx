@@ -21,7 +21,8 @@ import { AGENCY_CONFIG } from "../data/agencyData";
 import { getWhatsAppUrl } from "../utils/whatsapp";
 // Hero background video shipped with the site (works on any host).
 const heroVideoMp4 = { url: "/assets/videos/home-hero-video.mp4" };
-const heroVideoPoster = { url: "/assets/heroes/home-hero.jpg" };
+// First frame of the hero video: shows instantly, so there is never a black gap.
+const heroVideoPoster = { url: "/assets/videos/home-hero-poster.jpg" };
 
 // Typewriter Services list (types 1-by-1, pauses, erases, and cycles)
 const TYPEWRITER_SERVICES = [
