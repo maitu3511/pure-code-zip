@@ -52,16 +52,7 @@ export const Route = createFileRoute("/")({
       { name: "geo.placename", content: "Rajkot, Gujarat, India" },
       { name: "geo.position", content: "22.3039;70.8022" },
     ],
-    links: [
-      { rel: "canonical", href: "https://digibasera.com/" },
-      {
-        rel: "preload",
-        as: "video",
-        href: "/assets/videos/home-hero-video.mp4",
-        type: "video/mp4",
-        fetchPriority: "high",
-      },
-    ],
+    links: [{ rel: "canonical", href: "https://digibasera.com/" }],
   }),
   component: Index,
 });
