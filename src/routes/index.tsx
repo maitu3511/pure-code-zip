@@ -1,4 +1,4 @@
-import { createFileRoute, ClientOnly } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import SiteApp from "../SiteApp";
 
 export const Route = createFileRoute("/")({
@@ -58,9 +58,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  return (
-    <ClientOnly fallback={<div className="min-h-screen bg-white" />}>
-      <SiteApp />
-    </ClientOnly>
-  );
+  return <SiteApp />;
 }
