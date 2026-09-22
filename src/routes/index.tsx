@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
         as: "video",
         href: "/assets/videos/home-hero-video.mp4",
         type: "video/mp4",
-        fetchpriority: "high",
+        fetchPriority: "high",
       },
     ],
   }),
