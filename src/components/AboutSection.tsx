@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import {
   CheckCircle2,
@@ -9,8 +9,25 @@ import {
   Code2,
   TrendingUp,
   Award,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
-import { AGENCY_CONFIG } from "../data/agencyData";
+import { Button } from "./ui/button";
+
+const ABOUT_SLIDES = [
+  {
+    src: "/assets/images/sample-seo-traffic-chart.jpg",
+    alt: "SEO traffic growth analytics dashboard",
+  },
+  {
+    src: "/assets/images/site-premiumpackco.jpg",
+    alt: "High-converting ecommerce website project",
+  },
+  {
+    src: "/assets/images/sample-social-google-ads.jpg",
+    alt: "Digital advertising campaign creative",
+  },
+];
 
 interface AboutSectionProps {
   onOpenConsultation: () => void;
@@ -21,6 +38,27 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   onOpenConsultation,
   onNavigateToServices,
 }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % ABOUT_SLIDES.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const showPreviousSlide = () => {
+    setActiveSlide((current) => (current - 1 + ABOUT_SLIDES.length) % ABOUT_SLIDES.length);
+  };
+
+  const showNextSlide = () => {
+    setActiveSlide((current) => (current + 1) % ABOUT_SLIDES.length);
+  };
+
   const pillars = [
     { title: "Strategy", desc: "Market positioning & competitive moats", icon: Target },
     { title: "Creativity", desc: "Brand narrative & high-conversion visuals", icon: Sparkles },
@@ -74,15 +112,44 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             className="lg:col-span-6 relative"
           >
             <div className="relative rounded-2xl overflow-hidden border border-[#E8E1D0] bg-white shadow-[0_15px_40px_-15px_rgba(17,17,17,0.08)] p-6 sm:p-8">
-              {/* Image & Overlay Visual */}
+              {/* Image carousel */}
               <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-6 group border border-[#E8E1D0]">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                  alt="Digibasera Agency Strategic Team at Work"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
-                  loading="lazy"
-                />
+                {ABOUT_SLIDES.map((slide, index) => (
+                  <img
+                    key={slide.src}
+                    src={slide.src}
+                    alt={slide.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter brightness-95 ${
+                      index === activeSlide ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"
+                    }`}
+                    loading="lazy"
+                    aria-hidden={index !== activeSlide}
+                  />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/30 to-transparent" />
+
+                <div className="absolute inset-x-3 top-1/2 -translate-y-1/2 flex items-center justify-between opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    onClick={showPreviousSlide}
+                    aria-label="Previous image"
+                    className="rounded-full bg-[#111111]/75 text-white hover:bg-[#111111] hover:text-white border border-white/20 backdrop-blur-sm"
+                  >
+                    <ChevronLeft />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    onClick={showNextSlide}
+                    aria-label="Next image"
+                    className="rounded-full bg-[#111111]/75 text-white hover:bg-[#111111] hover:text-white border border-white/20 backdrop-blur-sm"
+                  >
+                    <ChevronRight />
+                  </Button>
+                </div>
 
                 <div className="absolute bottom-4 left-4 right-4">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] bg-[#111111]/90 px-2.5 py-1 rounded border border-[#D4AF37]/50 inline-block">
@@ -91,6 +158,22 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <h4 className="text-lg font-bold text-white font-heading mt-1">
                     Strategy • Engineering • Performance
                   </h4>
+                  <div className="flex items-center gap-1.5 mt-3" aria-label={`Image ${activeSlide + 1} of ${ABOUT_SLIDES.length}`}>
+                    {ABOUT_SLIDES.map((slide, index) => (
+                      <Button
+                        key={slide.src}
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setActiveSlide(index)}
+                        aria-label={`Show image ${index + 1}`}
+                        aria-current={index === activeSlide ? "true" : undefined}
+                        className={`h-2 w-2 min-w-0 rounded-full p-0 transition-all hover:bg-[#D4AF37] ${
+                          index === activeSlide ? "w-6 bg-[#D4AF37]" : "bg-white/70"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 

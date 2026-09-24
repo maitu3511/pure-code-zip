@@ -6,6 +6,6 @@
 - [x] About page के core team photos में faces का framing ठीक करना
 - [x] Pricing hero background से दोनों diagonal cross lines हटाना
 ## Current requests
-- [ ] Replace the About section image with a flexible carousel
-- [ ] Slow the home services auto-scroll
-- [ ] Reserve fixed typewriter space to prevent layout shifting
+- [x] Replace the About section image with a flexible carousel
+- [x] Slow the home services auto-scroll
+- [x] Reserve fixed typewriter space to prevent layout shifting

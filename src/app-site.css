@@ -276,7 +276,7 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  animation: marquee-linear 38s linear infinite !important;
+  animation: marquee-linear 72s linear infinite !important;
 }
 
 .animate-marquee-services:hover,
@@ -450,7 +450,7 @@
     animation-duration: 28s !important;
   }
   .animate-marquee-services {
-    animation-duration: 22s !important;
+    animation-duration: 72s !important;
   }
   .animate-marquee-testimonials,
   .animate-marquee-testimonials-reverse {
