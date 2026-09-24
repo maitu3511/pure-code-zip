@@ -150,8 +150,8 @@ export const Hero: React.FC<HeroProps> = ({
           className="space-y-4 max-w-4xl mx-auto"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FAF9F5] font-heading leading-[1.15] [text-shadow:0_2px_6px_rgba(6,14,18,0.65),0_4px_24px_rgba(6,14,18,0.5)]">
-            Transforming Brands Through High-Converting{" "}
-            <span className="relative inline-flex items-center text-[#EBC96A] italic font-serif drop-shadow-[0_2px_12px_rgba(6,14,18,0.6)]">
+            <span className="block">Transforming Brands Through High-Converting</span>
+            <span className="relative flex min-h-[2.3em] sm:min-h-[1.2em] items-start justify-center text-[#EBC96A] italic font-serif drop-shadow-[0_2px_12px_rgba(6,14,18,0.6)]">
               <span>{displayText}</span>
               <span className="inline-block w-[3px] sm:w-[4px] h-[0.85em] bg-[#E9C75F] ml-1 sm:ml-1.5 animate-pulse rounded-full shadow-[0_0_12px_rgba(233,199,95,0.9)]" />
             </span>

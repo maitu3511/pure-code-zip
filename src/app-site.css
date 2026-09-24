@@ -276,7 +276,7 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  animation: marquee-linear 38s linear infinite !important;
+  animation: marquee-linear 72s linear infinite !important;
 }
 
 .animate-marquee-services:hover,
